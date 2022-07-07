@@ -4,9 +4,11 @@ const {ApolloServer, gql} = require('apollo-server-express');
 const Persona = require('./models/persona');
 const cors = require('cors');
 
-
-mongoose.connect('mongodb+srv://pansobao:admin1234@cluster0.ptbb1.mongodb.net/?retryWrites=true&w=majority',{useNewUrlParser:true, useUnifiedTopology: true});
-
+// mongodb://localhost:27017
+mongoose.connect('mongodb://localhost:27017',{useNewUrlParser:true, useUnifiedTopology: true});
+//mongoose.connect('mongodb+srv://pansobao:admin1234@cluster0.ptbb1.mongodb.net/frontend',{useNewUrlParser:true, useUnifiedTopology: true});
+//mongoose.connect('mongodb+srv://pansobao:admin1234@cluster0.ptbb1.mongodb.net/?retryWrites=true&w=majority',{useNewUrlParser:true, useUnifiedTopology: true});
+//mongodb+srv://<username>:<password>@cluster0.ptbb1.mongodb.net/test
 const typeDefs = gql`
     type Persona{
         id: ID!
